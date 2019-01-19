@@ -20,12 +20,16 @@ var Counter = React.createClass({
 
     render: function() {
         return React.createElement('div', {},
-            React.createElement('button',{class='buttonPlus', onClick: this.increment}, '+'),
-            React.createElement('button',{class='buttonMinus', onClick: this.decrement}, '-'),
+            React.createElement('button',{className:'buttonPlus', onClick: this.increment}, '+'),
+            React.createElement('button',{className:'buttonMinus', onClick: this.decrement}, '-'),
             React.createElement('span', {}, 'Licznik ' + this.state.counter)
         );
     },
 });
 
-var element = React.createElement(Counter);
+var element = React.createElement('div', {},
+    React.createElement(Counter),
+    React.createElement(Counter),
+    React.createElement(Counter)
+);
 ReactDOM.render(element, document.getElementById('app'));
